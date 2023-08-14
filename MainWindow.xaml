@@ -1,0 +1,53 @@
+﻿<Window
+    x:Class="OnlyDox.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:OnlyDox"
+    Title="Side Panel App"
+    Width="1000"
+    Height="550">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!--  Side Panel  -->
+        <StackPanel Grid.Column="0" Background="#333">
+            <Button
+                Name="HomeBtn"
+                Click="HomeBtn_Click"
+                Foreground="{x:Null}"
+                Style="{StaticResource SideBarButton}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Images/home.png" />
+                </Button.Background>
+            </Button>
+            <Button
+                Name="OnlyBtn"
+                Click="OnlyBtn_Click"
+                Foreground="{x:Null}"
+                Style="{StaticResource SideBarButton}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Images/beach.png" />
+                </Button.Background>
+            </Button>
+            <Button
+                Name="SettingsBtn"
+                Click="SettingsBtn_Click"
+                Foreground="{x:Null}"
+                Style="{StaticResource SideBarButton}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Images/settings.png" />
+                </Button.Background>
+            </Button>
+        </StackPanel>
+
+        <!--  Frame to load User Controls  -->
+        <Frame
+            x:Name="ContentFrame"
+            Grid.Column="1"
+            NavigationUIVisibility="Hidden" />
+    </Grid>
+</Window>
