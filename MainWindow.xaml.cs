@@ -11,6 +11,7 @@ namespace  OnlyDox
         public MainWindow()
         {
             InitializeComponent();
+            NavigateToPage(new HomePage());
         }
 
         private void NavigateToPage(UserControl page)

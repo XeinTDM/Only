@@ -1,28 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace OnlyDox
 {
-    /// <summary>
-    /// Interaction logic for OnlyPage.xaml
-    /// </summary>
     public partial class OnlyPage : UserControl
     {
         public OnlyPage()
         {
             InitializeComponent();
+        }
+
+        private void CreateButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Switch to CreatePage user control
+            contentControl.Content = new CreatePage(this);
+        }
+
+        public void SwitchToOnlyPage()
+        {
+            // Switch back to OnlyPage user control
+            contentControl.Content = null;
         }
     }
 }
