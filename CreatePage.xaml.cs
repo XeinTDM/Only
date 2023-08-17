@@ -20,5 +20,13 @@ namespace OnlyDox
             // Switch back to OnlyPage user control
             _onlyPage.SwitchToOnlyPage();
         }
+
+        private void AddProfileBtn_Click(object sender, RoutedEventArgs e)
+        {
+            string firstName = FirstNameTextBox.Text;
+            string secondName = SecondNameTextBox.Text;
+            _onlyPage.SwitchToOnlyPageWithBox(firstName, secondName);
+        }
+
     }
 }

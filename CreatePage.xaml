@@ -20,12 +20,53 @@
                 <GradientStop Offset="1" Color="#FF1B1C27" />
             </LinearGradientBrush>
         </Border.Background>
+        <Grid>
 
-        <Button
-            Margin="10,10,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Click="BackButton_Click"
-            Content="Back" />
+
+            <Button
+                Margin="10,10,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="BackButton_Click"
+                Content="Back" />
+            <Button
+                Width="35"
+                Height="20"
+                Margin="0,0,20,20"
+                HorizontalAlignment="right"
+                VerticalAlignment="Bottom"
+                Click="AddProfileBtn_Click"
+                Content="Add" />
+
+            <TextBlock
+                Margin="10,70,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Foreground="White"
+                Text="First Name:" />
+
+            <TextBox
+                x:Name="FirstNameTextBox"
+                Width="200"
+                Margin="10,90,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top" />
+
+            <TextBlock
+                Margin="10,120,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Foreground="White"
+                Text="Second Name:" />
+
+            <TextBox
+                x:Name="SecondNameTextBox"
+                Width="200"
+                Margin="10,140,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top" />
+
+
+        </Grid>
     </Border>
 </UserControl>

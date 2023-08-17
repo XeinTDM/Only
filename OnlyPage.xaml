@@ -28,6 +28,7 @@
                 VerticalAlignment="Top"
                 FontSize="16"
                 FontWeight="Bold"
+                Foreground="White"
                 Text="Only Page" />
 
             <!--  Filter Rectangle  -->
@@ -114,6 +115,12 @@
                 VerticalAlignment="Top"
                 Click="CreateButton_Click"
                 Content="Create" />
+
+
+            <StackPanel
+                x:Name="boxContainer"
+                Margin="30,150,30,0"
+                VerticalAlignment="Top" />
 
             <ContentControl x:Name="contentControl" />
         </Grid>
