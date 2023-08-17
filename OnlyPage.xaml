@@ -7,104 +7,115 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     d:DesignHeight="450"
     d:DesignWidth="800"
-    Background="Blue"
+    Background="Transparent"
     mc:Ignorable="d">
 
-    <Grid>
-        <!--  Title  -->
-        <TextBlock
-            Margin="30,10,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            FontSize="16"
-            FontWeight="Bold"
-            Text="Only Page" />
+    <Border
+        BorderBrush="#FF454977"
+        BorderThickness="1,1,1,1"
+        CornerRadius="0,7,7,0">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                <GradientStop Color="#FF07070A" />
+                <GradientStop Offset="1" Color="#FF1B1C27" />
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+            <!--  Title  -->
+            <TextBlock
+                Margin="30,10,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                FontSize="16"
+                FontWeight="Bold"
+                Text="Only Page" />
 
-        <!--  Filter Rectangle  -->
-        <Border
-            Height="91"
-            Margin="30,50,30,0"
-            Padding="10"
-            VerticalAlignment="Top"
-            Background="White"
-            CornerRadius="5">
+            <!--  Filter Rectangle  -->
+            <Border
+                Height="91"
+                Margin="30,50,30,0"
+                Padding="10"
+                VerticalAlignment="Top"
+                Background="White"
+                CornerRadius="5">
 
-            <Grid Margin="0,0,0,0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
+                <Grid Margin="0,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
 
-                <!--  Filter Labels  -->
-                <TextBlock Grid.Column="0" Text="Country" />
-                <TextBlock Grid.Column="1" Text="Name" />
-                <TextBlock Grid.Column="2" Text="Body Type" />
-                <TextBlock Grid.Column="3" Text="Media Type" />
+                    <!--  Filter Labels  -->
+                    <TextBlock Grid.Column="0" Text="Country" />
+                    <TextBlock Grid.Column="1" Text="Name" />
+                    <TextBlock Grid.Column="2" Text="Body Type" />
+                    <TextBlock Grid.Column="3" Text="Media Type" />
 
-                <!--  Filter Controls  -->
-                <!--  Country ComboBox  -->
-                <ComboBox
-                    Grid.Row="1"
-                    Grid.Column="0"
-                    Width="150"
-                    Height="25"
-                    Margin="0,5">
-                    <!--  Add your countries here  -->
-                    <ComboBoxItem Content="USA" />
-                    <ComboBoxItem Content="Canada" />
-                    <!--  ... other countries  -->
-                </ComboBox>
+                    <!--  Filter Controls  -->
+                    <!--  Country ComboBox  -->
+                    <ComboBox
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Width="150"
+                        Height="25"
+                        Margin="0,5">
+                        <!--  Add your countries here  -->
+                        <ComboBoxItem Content="USA" />
+                        <ComboBoxItem Content="Canada" />
+                        <!--  ... other countries  -->
+                    </ComboBox>
 
-                <!--  Name TextBox  -->
-                <TextBox
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    Width="150"
-                    Height="25"
-                    Margin="0,5" />
+                    <!--  Name TextBox  -->
+                    <TextBox
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Width="150"
+                        Height="25"
+                        Margin="0,5" />
 
-                <!--  Body Type ComboBox  -->
-                <ComboBox
-                    Grid.Row="1"
-                    Grid.Column="2"
-                    Width="150"
-                    Height="25"
-                    Margin="0,5">
-                    <!--  Add body types here  -->
-                    <ComboBoxItem Content="Type1" />
-                    <ComboBoxItem Content="Type2" />
-                    <!--  ... other body types  -->
-                </ComboBox>
+                    <!--  Body Type ComboBox  -->
+                    <ComboBox
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        Width="150"
+                        Height="25"
+                        Margin="0,5">
+                        <!--  Add body types here  -->
+                        <ComboBoxItem Content="Type1" />
+                        <ComboBoxItem Content="Type2" />
+                        <!--  ... other body types  -->
+                    </ComboBox>
 
-                <!--  Media Type ComboBox  -->
-                <ComboBox
-                    Grid.Row="1"
-                    Grid.Column="3"
-                    Width="150"
-                    Height="25"
-                    Margin="0,5">
-                    <ComboBoxItem Content="Pictures" />
-                    <ComboBoxItem Content="Videos" />
-                    <ComboBoxItem Content="Both" />
-                </ComboBox>
-            </Grid>
-        </Border>
+                    <!--  Media Type ComboBox  -->
+                    <ComboBox
+                        Grid.Row="1"
+                        Grid.Column="3"
+                        Width="150"
+                        Height="25"
+                        Margin="0,5">
+                        <ComboBoxItem Content="Pictures" />
+                        <ComboBoxItem Content="Videos" />
+                        <ComboBoxItem Content="Both" />
+                    </ComboBox>
+                </Grid>
+            </Border>
 
-        <!--  Create Button  -->
-        <Button
-            Margin="0,210,10,0"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top"
-            Click="CreateButton_Click"
-            Content="Create" />
+            <!--  Create Button  -->
+            <Button
+                Margin="0,210,10,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Click="CreateButton_Click"
+                Content="Create" />
 
-        <ContentControl x:Name="contentControl" />
-    </Grid>
+            <ContentControl x:Name="contentControl" />
+        </Grid>
+    </Border>
 </UserControl>
