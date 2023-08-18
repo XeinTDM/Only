@@ -1,7 +1,8 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Windows;
 using System.Windows.Controls;
-
+using System.Windows.Media.Imaging;
 
 namespace OnlyDox
 {
@@ -26,6 +27,20 @@ namespace OnlyDox
             string firstName = FirstNameTextBox.Text;
             string secondName = SecondNameTextBox.Text;
             _onlyPage.SwitchToOnlyPageWithBox(firstName, secondName);
+        }
+
+        private void SelectImageButton_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new()
+            {
+                Filter = "Image files (*.png;*.jpeg;*.jpg;*.bmp)|*.png;*.jpeg;*.jpg;*.bmp"
+            };
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                var image = new BitmapImage(new Uri(openFileDialog.FileName));
+                SelectedImage.Source = image;
+            }
         }
 
     }

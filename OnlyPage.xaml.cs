@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace OnlyDox
 {
@@ -24,15 +25,23 @@ namespace OnlyDox
             contentControl.Content = null;
         }
 
-        public void SwitchToOnlyPageWithBox(string firstName, string secondName)
+        public void SwitchToOnlyPageWithBox(string firstName, string secondName, ImageSource imageSource)
         {
             contentControl.Content = null;
-            CreateBox(firstName, secondName);
+            CreateBox(firstName, secondName, imageSource);
         }
-        
-        private void CreateBox(string firstName, string secondName)
+
+        private void CreateBox(string firstName, string secondName, ImageSource imageSource)
         {
             StackPanel boxContent = new();
+
+            Image boxImage = new Image
+            {
+                Width = 125,
+                Height = 125,
+                Source = imageSource
+            };
+            boxContent.Children.Add(boxImage);
 
             TextBlock firstNameTextBlock = new()
             {
