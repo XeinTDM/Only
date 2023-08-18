@@ -32,21 +32,21 @@ namespace OnlyDox
 
         private void CreateBox(string firstName, string secondName)
         {
-            StackPanel boxContent = new StackPanel();
+            StackPanel boxContent = new();
 
-            TextBlock firstNameTextBlock = new TextBlock
+            TextBlock firstNameTextBlock = new()
             {
                 Text = "First Name: " + firstName
             };
             boxContent.Children.Add(firstNameTextBlock);
 
-            TextBlock secondNameTextBlock = new TextBlock
+            TextBlock secondNameTextBlock = new()
             {
                 Text = "Second Name: " + secondName
             };
             boxContent.Children.Add(secondNameTextBlock);
 
-            Button closeButton = new Button
+            Button closeButton = new()
             {
                 Content = "X",
                 Width = 20,
@@ -54,18 +54,18 @@ namespace OnlyDox
                 HorizontalAlignment = HorizontalAlignment.Right
             };
 
-            closeButton.Click += (sender, e) =>
-            {
-                boxContainer.Children.Remove(box);
-            };
-
-            Border box = new Border
+            Border box = new()
             {
                 Width = 250,
                 Height = 100,
                 Background = Brushes.White,
                 Margin = new Thickness(5),
                 Child = boxContent
+            };
+
+            closeButton.Click += (sender, e) =>
+            {
+                boxContainer.Children.Remove(box);
             };
 
             boxContent.Children.Add(closeButton);

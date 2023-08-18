@@ -7,7 +7,7 @@ namespace OnlyDox
 {
     public partial class CreatePage : UserControl
     {
-        private OnlyPage _onlyPage;
+        private readonly OnlyPage _onlyPage;
 
         public CreatePage(OnlyPage onlyPage)
         {
