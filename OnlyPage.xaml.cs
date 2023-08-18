@@ -35,7 +35,7 @@ namespace OnlyDox
         {
             StackPanel boxContent = new();
 
-            Image boxImage = new Image
+            Image boxImage = new()
             {
                 Width = 125,
                 Height = 125,

@@ -17,7 +17,7 @@ namespace  OnlyDox
         private void NavigateToPage(UserControl page)
         {
             // Animation
-            DoubleAnimation fadeAnimation = new DoubleAnimation
+            DoubleAnimation fadeAnimation = new()
             {
                 From = 0.0,
                 To = 1.0,

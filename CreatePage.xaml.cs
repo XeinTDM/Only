@@ -2,6 +2,7 @@
 using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace OnlyDox
@@ -26,7 +27,8 @@ namespace OnlyDox
         {
             string firstName = FirstNameTextBox.Text;
             string secondName = SecondNameTextBox.Text;
-            _onlyPage.SwitchToOnlyPageWithBox(firstName, secondName);
+            ImageSource selectedImageSource = SelectedImage.Source;
+            _onlyPage.SwitchToOnlyPageWithBox(firstName, secondName, selectedImageSource);
         }
 
         private void SelectImageButton_Click(object sender, RoutedEventArgs e)
