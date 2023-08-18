@@ -110,7 +110,7 @@
 
             <!--  Create Button  -->
             <Button
-                Margin="0,210,10,0"
+                Margin="0,142,30,0"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top"
                 Click="CreateButton_Click"
