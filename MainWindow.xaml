@@ -43,8 +43,8 @@
             <Button
                 Name="OnlyBtn"
                 Margin="0,75,0,0"
-                Click="OnlyBtn_Click"
                 VerticalAlignment="Top"
+                Click="OnlyBtn_Click"
                 Foreground="{x:Null}"
                 Style="{StaticResource SideBarButton}">
                 <Button.Background>

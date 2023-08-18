@@ -74,13 +74,24 @@
                 Click="SelectImageButton_Click"
                 Content="Select Image" />
 
-            <Image
-                x:Name="SelectedImage"
+            <Canvas
+                x:Name="ImageCanvas"
                 Width="125"
                 Height="125"
-                Margin="10,210,0,0"
+                Margin="20,0,0,180"
                 HorizontalAlignment="Left"
-                VerticalAlignment="Top" />
+                ClipToBounds="True">
+
+                <Image
+                    x:Name="SelectedImage"
+                    Width="Auto"
+                    Height="Auto"
+                    MouseLeftButtonDown="Image_MouseLeftButtonDown"
+                    MouseLeftButtonUp="Image_MouseLeftButtonUp"
+                    MouseMove="Image_MouseMove"
+                    Stretch="Uniform" />
+            </Canvas>
+
 
 
         </Grid>

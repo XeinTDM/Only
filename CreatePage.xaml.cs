@@ -2,6 +2,7 @@
 using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
@@ -10,6 +11,8 @@ namespace OnlyDox
     public partial class CreatePage : UserControl
     {
         private readonly OnlyPage _onlyPage;
+        private bool isDragging = false;
+        private Point lastPosition;
 
         public CreatePage(OnlyPage onlyPage)
         {
@@ -42,8 +45,46 @@ namespace OnlyDox
             {
                 var image = new BitmapImage(new Uri(openFileDialog.FileName));
                 SelectedImage.Source = image;
+
+                // Always stretch the image to fill the width of the canvas
+                SelectedImage.Width = 125;
+                SelectedImage.Height = 125 * (image.Height / image.Width);
+
+                // Reset image position within the canvas
+                Canvas.SetLeft(SelectedImage, 0);
+                Canvas.SetTop(SelectedImage, 0);
             }
         }
 
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            isDragging = true;
+            lastPosition = e.GetPosition(ImageCanvas);
+            SelectedImage.CaptureMouse();
+        }
+
+        private void Image_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isDragging)
+            {
+                var currentPosition = e.GetPosition(ImageCanvas);
+                var offsetX = currentPosition.X - lastPosition.X;
+                var offsetY = currentPosition.Y - lastPosition.Y;
+
+                var newX = Canvas.GetLeft(SelectedImage) + offsetX;
+                var newY = Canvas.GetTop(SelectedImage) + offsetY;
+
+                Canvas.SetLeft(SelectedImage, newX);
+                Canvas.SetTop(SelectedImage, newY);
+
+                lastPosition = currentPosition;
+            }
+        }
+
+        private void Image_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            isDragging = false;
+            SelectedImage.ReleaseMouseCapture();
+        }
     }
 }

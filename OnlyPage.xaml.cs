@@ -39,8 +39,12 @@ namespace OnlyDox
             {
                 Width = 125,
                 Height = 125,
-                Source = imageSource
+                Source = imageSource,
+                HorizontalAlignment = HorizontalAlignment.Left,
+                VerticalAlignment = VerticalAlignment.Top,
+                Stretch = Stretch.UniformToFill
             };
+
             boxContent.Children.Add(boxImage);
 
             TextBlock firstNameTextBlock = new()

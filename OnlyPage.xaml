@@ -146,7 +146,9 @@
                     Width="1150"
                     Margin="0,200,0,0"
                     HorizontalAlignment="Center"
-                    VerticalAlignment="Top" />
+                    VerticalAlignment="Top"
+                    Orientation="Horizontal" />
+
 
                 <ContentControl x:Name="contentControl" />
             </Grid>
