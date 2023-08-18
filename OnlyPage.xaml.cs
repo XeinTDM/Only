@@ -29,7 +29,7 @@ namespace OnlyDox
             contentControl.Content = null;
             CreateBox(firstName, secondName);
         }
-
+        
         private void CreateBox(string firstName, string secondName)
         {
             StackPanel boxContent = new();
@@ -51,15 +51,16 @@ namespace OnlyDox
                 Content = "X",
                 Width = 20,
                 Height = 20,
-                HorizontalAlignment = HorizontalAlignment.Right
+                HorizontalAlignment = HorizontalAlignment.Right,
+                VerticalAlignment = VerticalAlignment.Top
             };
 
             Border box = new()
             {
                 Width = 250,
-                Height = 100,
+                Height = 300,
                 Background = Brushes.White,
-                Margin = new Thickness(5),
+                Margin = new Thickness(15),
                 Child = boxContent
             };
 
