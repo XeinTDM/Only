@@ -38,6 +38,7 @@
                 Click="AddProfileBtn_Click"
                 Content="Add" />
 
+            <!--  First Name  -->
             <TextBlock
                 Margin="10,70,0,0"
                 HorizontalAlignment="Left"
@@ -52,6 +53,7 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top" />
 
+            <!--  Second Name  -->
             <TextBlock
                 Margin="10,120,0,0"
                 HorizontalAlignment="Left"
@@ -66,9 +68,25 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top" />
 
+            <!--  Middle Name  -->
+            <TextBlock
+                Margin="10,170,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Foreground="White"
+                Text="Middle Name:" />
+
+            <TextBox
+                x:Name="MiddleNameTextBox"
+                Width="200"
+                Margin="10,190,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top" />
+
+            <!--  Preview Main Image  -->
             <Button
                 x:Name="SelectImageButton"
-                Margin="10,180,0,0"
+                Margin="10,220,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Click="SelectImageButton_Click"
@@ -78,7 +96,7 @@
                 x:Name="ImageCanvas"
                 Width="125"
                 Height="125"
-                Margin="20,0,0,180"
+                Margin="10,0,0,120"
                 HorizontalAlignment="Left"
                 ClipToBounds="True">
 

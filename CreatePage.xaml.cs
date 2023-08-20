@@ -30,8 +30,11 @@ namespace OnlyDox
         {
             string firstName = FirstNameTextBox.Text;
             string secondName = SecondNameTextBox.Text;
+            string MiddleName = MiddleNameTextBox.Text;
             ImageSource selectedImageSource = SelectedImage.Source;
-            _onlyPage.SwitchToOnlyPageWithBox(firstName, secondName, selectedImageSource);
+            double imageX = Canvas.GetLeft(SelectedImage);
+            double imageY = Canvas.GetTop(SelectedImage);
+            _onlyPage.SwitchToOnlyPageWithBox(firstName, secondName, MiddleName, selectedImageSource, imageX, imageY);
         }
 
         private void SelectImageButton_Click(object sender, RoutedEventArgs e)

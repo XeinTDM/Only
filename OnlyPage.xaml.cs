@@ -25,13 +25,13 @@ namespace OnlyDox
             contentControl.Content = null;
         }
 
-        public void SwitchToOnlyPageWithBox(string firstName, string secondName, ImageSource imageSource)
+        public void SwitchToOnlyPageWithBox(string firstName, string secondName, string MiddleName, ImageSource imageSource, double imageX, double imageY)
         {
             contentControl.Content = null;
-            CreateBox(firstName, secondName, imageSource);
+            CreateBox(firstName, secondName, MiddleName, imageSource, imageX, imageY);
         }
 
-        private void CreateBox(string firstName, string secondName, ImageSource imageSource)
+        private void CreateBox(string firstName, string secondName, string MiddleName, ImageSource imageSource, double imageX, double imageY)
         {
             StackPanel boxContent = new();
 
@@ -46,6 +46,9 @@ namespace OnlyDox
             };
 
             boxContent.Children.Add(boxImage);
+            Canvas.SetLeft(boxImage, imageX);
+            Canvas.SetTop(boxImage, imageY);
+
 
             TextBlock firstNameTextBlock = new()
             {
@@ -58,6 +61,12 @@ namespace OnlyDox
                 Text = "Second Name: " + secondName
             };
             boxContent.Children.Add(secondNameTextBlock);
+
+            TextBlock MiddleNameTextBox = new()
+            {
+                Text = "Middle Name: " + MiddleName
+            };
+            boxContent.Children.Add(MiddleNameTextBox);
 
             Button closeButton = new()
             {
