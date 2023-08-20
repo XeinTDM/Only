@@ -46,9 +46,6 @@ namespace OnlyDox
             };
 
             boxContent.Children.Add(boxImage);
-            Canvas.SetLeft(boxImage, imageX);
-            Canvas.SetTop(boxImage, imageY);
-
 
             TextBlock firstNameTextBlock = new()
             {
@@ -85,6 +82,11 @@ namespace OnlyDox
                 Margin = new Thickness(15),
                 Child = boxContent
             };
+
+            Canvas.SetLeft(box, imageX);
+            Canvas.SetTop(box, imageY);
+            box.UpdateLayout();
+            Canvas.SetZIndex(box, 1);
 
             closeButton.Click += (sender, e) =>
             {
